@@ -26,7 +26,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             We help African Founders unlock growth through tailored
-            marketing resources and top-tier marketing talents. That's how
+            marketing resources and top-tier marketing talents. That&apos;s how
             we discover and create success stories.
           </motion.p>
 
