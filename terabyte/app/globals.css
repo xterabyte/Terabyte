@@ -8,92 +8,92 @@ body {
 
 @layer base {
   :root {
-    /* Base colors - keeping white background for clean look */
-    --background: 0 0% 100%;
-    --foreground: 215 25% 27%; /* Deep blue-gray for main text */
+    /* Base colors - clean white background with dark text */
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 0%; /* Pure black for main text */
     
     /* Card and surface colors */
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 0 0% 0%;
     
-    /* Primary colors - using terabyte's apparent brand color */
-    --primary: 187 75% 40%; /* Bright cyan/teal */
+    /* Primary colors - using the brand blue */
+    --primary: 198 82% 22%; /* #0a4c68 */
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary colors */
-    --secondary: 190 60% 98%; /* Very light cyan for subtle backgrounds */
-    --secondary-foreground: 187 75% 40%;
+    /* Secondary colors - light green tint */
+    --secondary: 140 100% 98%; /* #f6fff9 */
+    --secondary-foreground: 198 82% 22%;
     
     /* Muted variants */
-    --muted: 185 33% 94%;
-    --muted-foreground: 215 25% 40%;
+    --muted: 140 33% 95%;
+    --muted-foreground: 198 82% 15%;
     
-    /* Accent colors */
-    --accent: 187 75% 97%;
-    --accent-foreground: 187 75% 40%;
+    /* Accent colors - lighter version of primary */
+    --accent: 198 82% 95%;
+    --accent-foreground: 198 82% 22%;
     
     /* Destructive/Error colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
     /* Border and input colors */
-    --border: 187 20% 90%;
-    --input: 187 20% 90%;
-    --ring: 187 75% 40%;
+    --border: 198 20% 88%;
+    --input: 198 20% 88%;
+    --ring: 198 82% 22%;
     
-    /* Chart colors - maintaining brand consistency */
-    --chart-1: 187 75% 40%;
-    --chart-2: 215 25% 27%;
-    --chart-3: 190 60% 50%;
-    --chart-4: 185 65% 55%;
-    --chart-5: 195 70% 45%;
+    /* Chart colors - based on primary palette */
+    --chart-1: 198 82% 22%;
+    --chart-2: 198 82% 35%;
+    --chart-3: 198 70% 45%;
+    --chart-4: 140 100% 98%;
+    --chart-5: 198 82% 60%;
     
     --radius: 0.5rem;
   }
 
   .dark {
-    /* Dark mode - elegant and complementary to light theme */
-    --background: 215 32% 10%; /* Deep blue-gray background */
-    --foreground: 187 20% 98%; /* Light cyan text */
+    /* Dark mode - deep blue-based dark theme complementing light mode */
+    --background: 198 82% 8%; /* Darker version of primary */
+    --foreground: 140 100% 98%; /* Light secondary color */
     
     /* Card and surface colors */
-    --card: 215 30% 12%;
-    --card-foreground: 187 20% 98%;
-    --popover: 215 30% 12%;
-    --popover-foreground: 187 20% 98%;
+    --card: 198 82% 12%;
+    --card-foreground: 140 100% 98%;
+    --popover: 198 82% 12%;
+    --popover-foreground: 140 100% 98%;
     
-    /* Primary colors - brightened for dark mode */
-    --primary: 187 70% 55%; /* Brighter cyan for contrast */
-    --primary-foreground: 215 32% 10%;
+    /* Primary colors - lighter version of primary */
+    --primary: 198 82% 60%;
+    --primary-foreground: 198 82% 8%;
     
     /* Secondary colors */
-    --secondary: 215 25% 20%;
-    --secondary-foreground: 187 70% 55%;
+    --secondary: 140, 89%, 65%;
+    --secondary-foreground: 140 100% 98%;
     
     /* Muted variants */
-    --muted: 215 25% 18%;
-    --muted-foreground: 187 20% 80%;
+    --muted: 198 82% 18%;
+    --muted-foreground: 140 30% 90%;
     
     /* Accent colors */
-    --accent: 187 70% 20%;
-    --accent-foreground: 187 70% 55%;
+    --accent: 198 82% 25%;
+    --accent-foreground: 140 100% 98%;
     
     /* Destructive/Error colors */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     
     /* Border and input colors */
-    --border: 215 25% 20%;
-    --input: 215 25% 20%;
-    --ring: 187 70% 55%;
+    --border: 198 82% 20%;
+    --input: 198 82% 20%;
+    --ring: 198 82% 60%;
     
     /* Chart colors - adjusted for dark mode */
-    --chart-1: 187 70% 55%;
-    --chart-2: 190 60% 70%;
-    --chart-3: 185 65% 65%;
-    --chart-4: 195 70% 60%;
-    --chart-5: 180 75% 50%;
+    --chart-1: 198 82% 60%;
+    --chart-2: 198 82% 70%;
+    --chart-3: 198 70% 80%;
+    --chart-4: 140 100% 90%;
+    --chart-5: 198 82% 40%;
   }
 }
