@@ -32,7 +32,7 @@ const CareerSection = () => {
                 Opportunities for{' '}
                 <span className="block">Career Growth</span>
               </h2>
-              <p className="text-lg text-foreground/80 dark:text-secondary/90 leading-relaxed">
+              <p className="text-lg text-foreground/80 dark:text-secondary leading-relaxed">
                 We not only build talents. We connect talents with roles in the marketing space.
                 We support your career and help founders find the expertise they need.
               </p>
