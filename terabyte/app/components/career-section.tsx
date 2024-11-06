@@ -39,7 +39,7 @@ const CareerSection = () => {
               <Button 
                 variant="outline"
                 size="lg"
-                className="mt-4 text-primary border-primary hover:bg-primary hover:text-white 
+                className="mt-4 text-primary border-teragreen hover:bg-primary hover:text-white 
                          dark:text-primary dark:border-primary dark:hover:bg-primary dark:hover:text-white 
                          transition-colors duration-300 font-semibold tracking-wide min-w-[180px]"
               >

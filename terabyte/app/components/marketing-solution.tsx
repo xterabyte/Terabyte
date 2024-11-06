@@ -16,7 +16,7 @@ const MarketingSolutions = () => {
                 Hands-on Marketing{' '}
                 <span className="block">Solutions for Traction</span>
               </h2>
-              <p className="text-lg text-foreground/80 dark:text-secondary/90 leading-relaxed">
+              <p className="text-lg text-foreground/80 dark:text-secondary leading-relaxed">
                 Our Sales Accelerator delivers tailored, high-impact
                 marketing strategies to enhance visibility, retention, and
                 revenue. We help startups navigate growth with less
@@ -25,7 +25,7 @@ const MarketingSolutions = () => {
               <Button 
                 variant="outline"
                 size="lg"
-                className="mt-4 text-primary border-primary hover:bg-primary hover:text-white 
+                className="mt-4 text-primary border-teragreen hover:bg-primary hover:text-white 
                          dark:text-primary dark:border-primary dark:hover:bg-primary dark:hover:text-white 
                          transition-colors duration-300 font-semibold tracking-wide min-w-[180px]"
               >
@@ -45,7 +45,7 @@ const MarketingSolutions = () => {
                 src={HappyPersons}
                 alt="Happy people representing successful marketing solutions"
                 fill
-                className="object-contain object-center dark:opacity-90 transition-opacity duration-300"
+                className="object-cover object-center dark:opacity-90 transition-opacity duration-300"
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
