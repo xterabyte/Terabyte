@@ -12,6 +12,7 @@ import {
   useTransform, 
   useSpring,
   useInView,
+  PanInfo,
 } from 'framer-motion'
 
 // Import company logos
@@ -34,15 +35,6 @@ const companies: Company[] = [
 ]
 
 const LOGO_WIDTH = 160
-const VISIBLE_LOGOS = 4
-const AUTO_SCROLL_INTERVAL = 3000
-
-const springConfig = {
-  type: "spring",
-  stiffness: 300,
-  damping: 30,
-  mass: 0.5,
-} as const
 
 const PortfolioCompanies = () => {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -53,7 +45,6 @@ const PortfolioCompanies = () => {
 
   // Initialize spring with proper type
   const x = useSpring(0)
-  const [dragStartX, setDragStartX] = useState(0)
   
   // Triple the items for seamless loop
   const wrappedItems = [...companies, ...companies, ...companies]
@@ -65,10 +56,9 @@ const PortfolioCompanies = () => {
 
   const handleDragStart = () => {
     setIsAutoScrolling(false)
-    setDragStartX(x.get())
   }
 
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const offset = info.offset.x
     const velocity = info.velocity.x
 
@@ -95,7 +85,7 @@ const PortfolioCompanies = () => {
       const newIndex = (activeIndex + 1) % companies.length
       setActiveIndex(newIndex)
       x.set(-newIndex * LOGO_WIDTH)
-    }, AUTO_SCROLL_INTERVAL)
+    }, 3000)
 
     return () => clearInterval(interval)
   }, [activeIndex, isAutoScrolling, x])
