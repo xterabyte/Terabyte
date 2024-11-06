@@ -12,7 +12,6 @@ import {
   useTransform, 
   useSpring,
   useInView,
-  MotionValue
 } from 'framer-motion'
 
 // Import company logos
