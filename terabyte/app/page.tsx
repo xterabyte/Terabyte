@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import CareerSection from './components/career-section'
 import MarketingSolutions from "./components/marketing-solution";
+import PortfolioCompanies from "./components/portfoliosection";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <CareerSection />
       <MarketingSolutions />
+      <PortfolioCompanies />
       {/* Other sections will go here */}
     </main>
   )

@@ -17,6 +17,7 @@ const config: Config = {
   				foreground: 'hsl(var(--card-foreground))'
   			},
 			teragreen: "#57f58b",
+			terabg: "#0a4c68",
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
