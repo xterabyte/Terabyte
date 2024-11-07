@@ -1,3 +1,4 @@
+import EventsSection from "./components/EventsSection";
 import Hero from "./components/Hero";
 import CareerSection from './components/career-section'
 import MarketingSolutions from "./components/marketing-solution";
@@ -10,6 +11,7 @@ export default function Home() {
       <CareerSection />
       <MarketingSolutions />
       <PortfolioCompanies />
+      <EventsSection />
       {/* Other sections will go here */}
     </main>
   )
