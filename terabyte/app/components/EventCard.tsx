@@ -40,7 +40,6 @@ const EventCard = ({
   date, 
   time, 
   status, 
-  link 
 }: EventCardProps) => {
   return (
     <motion.div 
