@@ -41,7 +41,7 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-primary dark:text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               We are a marketing ecosystem where African founders and talents can access resources and opportunities for growth.
             </h2>
           </motion.div>
@@ -56,7 +56,7 @@ const Footer = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
                 >
-                  <h3 className="font-semibold text-sm text-primary dark:text-primary mb-4 tracking-wider">
+                  <h3 className="font-semibold text-sm text-white mb-4 tracking-wider">
                     {section.title}
                   </h3>
                   <ul className="space-y-3">
@@ -64,7 +64,7 @@ const Footer = () => {
                       <li key={link.name}>
                         <Link 
                           href={link.href}
-                          className="text-muted-foreground hover:text-primary dark:text-secondary/80 dark:hover:text-white transition-colors duration-200 text-sm"
+                          className="text-white hover:text-teragreen transition-colors duration-200 text-sm"
                         >
                           {link.name}
                         </Link>
@@ -85,7 +85,7 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-muted-foreground dark:text-secondary/80">
+            <div className="text-sm text-white">
               Copyright | {new Date().getFullYear()} All Rights Reserved
             </div>
             
@@ -93,19 +93,19 @@ const Footer = () => {
             <div className="flex items-center space-x-6">
               <Link 
                 href="#"
-                className="text-muted-foreground hover:text-primary dark:text-secondary/80 dark:hover:text-white transition-colors duration-200"
+                className="text-white hover:text-teragreen transition-colors duration-200"
               >
                 Terms
               </Link>
               <Link 
                 href="#"
-                className="text-muted-foreground hover:text-primary dark:text-secondary/80 dark:hover:text-white transition-colors duration-200"
+                className="text-white hover:text-teragreen transition-colors duration-200"
               >
                 Privacy
               </Link>
               <Link 
                 href="#"
-                className="text-muted-foreground hover:text-primary dark:text-secondary/80 dark:hover:text-white transition-colors duration-200"
+                className="text-white hover:text-teragreen transition-colors duration-200"
               >
                 Cookies
               </Link>

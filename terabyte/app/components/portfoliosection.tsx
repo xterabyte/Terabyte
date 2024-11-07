@@ -189,7 +189,7 @@ const PortfolioCompanies = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <motion.div 
-                      className="absolute inset-0 flex items-center justify-center bg-white dark:bg-white/5 rounded-lg shadow-md"
+                      className="absolute inset-0 flex items-center justify-center bg-white rounded-lg shadow-md"
                       initial={{ y: 20, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ delay: index * 0.1 }}
