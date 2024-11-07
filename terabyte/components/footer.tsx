@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Linkedin, Instagram, Facebook } from "lucide-react"
+import { SiLinkedin, SiInstagram, SiFacebook } from "react-icons/si"
 
 const footerLinks = {
   talents: {
@@ -63,19 +63,19 @@ const Footer = () => {
                 href="#"
                 className="text-white hover:text-teragreen transition-colors duration-200"
               >
-                <Linkedin size={24} />
+                <SiLinkedin size={24} />
               </Link>
               <Link 
                 href="#"
                 className="text-white hover:text-teragreen transition-colors duration-200"
               >
-                <Instagram size={24} />
+                <SiInstagram size={24} />
               </Link>
               <Link 
                 href="#"
                 className="text-white hover:text-teragreen transition-colors duration-200"
               >
-                <Facebook size={24} />
+                <SiFacebook size={24} />
               </Link>
             </div>
           </motion.div>
