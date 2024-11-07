@@ -1,7 +1,9 @@
 'use client'
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
+import { Linkedin, Instagram, Facebook } from "lucide-react"
 
 const footerLinks = {
   talents: {
@@ -31,19 +33,51 @@ const footerLinks = {
 const Footer = () => {
   return (
     <footer className="bg-terabg dark:bg-background border-t border-border/20">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 lg:pt-40">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Brand Section */}
           <motion.div 
-            className="lg:col-span-5"
+            className="lg:col-span-5 flex flex-col items-start"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              We are a marketing ecosystem where African founders and talents can access resources and opportunities for growth.
+            {/* Logo */}
+            <Image
+              src="/terabytewhitelogo.png"
+              alt="Terabyte Logo"
+              width={180}
+              height={40}
+              className="mb-6"
+            />
+            
+            {/* Shorter Brand Text */}
+            <h2 className="text-lg md:text-xl font-bold text-white mb-6">
+            We are a marketing ecosystem where African founders and talents can access resources and opportunities for growth.
             </h2>
+
+            {/* Social Icons */}
+            <div className="flex items-center space-x-4">
+              <Link 
+                href="#"
+                className="text-white hover:text-teragreen transition-colors duration-200"
+              >
+                <Linkedin size={24} />
+              </Link>
+              <Link 
+                href="#"
+                className="text-white hover:text-teragreen transition-colors duration-200"
+              >
+                <Instagram size={24} />
+              </Link>
+              <Link 
+                href="#"
+                className="text-white hover:text-teragreen transition-colors duration-200"
+              >
+                <Facebook size={24} />
+              </Link>
+            </div>
           </motion.div>
 
           {/* Links Sections */}
@@ -89,7 +123,7 @@ const Footer = () => {
               Copyright | {new Date().getFullYear()} All Rights Reserved
             </div>
             
-            {/* Social Links - Add your social media links here */}
+            {/* Legal Links */}
             <div className="flex items-center space-x-6">
               <Link 
                 href="#"

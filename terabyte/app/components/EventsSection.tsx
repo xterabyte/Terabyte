@@ -55,7 +55,7 @@ const events: Event[] = [
 
 const EventsSection = () => {
   return (
-    <section className="relative w-full bg-secondary/50 dark:bg-background py-20">
+    <section className="relative w-full bg-background dark:bg-background py-20">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl -z-10" />
