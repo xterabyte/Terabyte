@@ -1,5 +1,6 @@
 import EventsSection from "./components/EventsSection";
 import Hero from "./components/Hero";
+import MarketingLaunchpad from "./components/MarketingLaunchpad";
 import CareerSection from './components/career-section'
 import MarketingSolutions from "./components/marketing-solution";
 import PortfolioCompanies from "./components/portfoliosection";
@@ -12,7 +13,7 @@ export default function Home() {
       <MarketingSolutions />
       <PortfolioCompanies />
       <EventsSection />
-      {/* Other sections will go here */}
+      <MarketingLaunchpad />
     </main>
   )
 }
