@@ -106,7 +106,7 @@ const PortfolioCompanies = () => {
   }
 
   return (
-    <section className="w-full bg-secondary/50 dark:bg-background py-16 relative overflow-hidden">
+    <section className="w-full bg-terabg dark:bg-background py-16 relative overflow-hidden">
       <motion.div 
         className="absolute inset-0 -z-10"
         style={{ y: parallaxY }}
@@ -130,7 +130,7 @@ const PortfolioCompanies = () => {
 
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-3xl md:text-4xl font-bold text-primary dark:text-white text-center mb-12"
+          className="text-3xl md:text-4xl font-bold text-white text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.6 }}
