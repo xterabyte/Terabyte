@@ -6,6 +6,7 @@ import { projectCategory } from './projectCategory'
 import { siteSettings } from './siteSettings'
 import { codeBlock } from './codeBlock'
 import { pageContent } from './pageContent'
+import event from './event'
 
 export const schemaTypes = [
   post,
@@ -16,4 +17,5 @@ export const schemaTypes = [
   siteSettings,
   codeBlock,
   pageContent,
+  event
 ]
