@@ -1,59 +1,34 @@
+// EventsSection.tsx
 'use client'
 
+import { useEffect, useState } from 'react'
 import EventCard from './EventCard'
 import { motion } from 'framer-motion'
-import afternysc from '@/app/assets/afternysc.png'
-import maxservice from '@/app/assets/maxservice.jpg'
-import dollarmarket from '@/app/assets/dollarmarket.png'
-import cohort1 from '@/app/assets/cohort1.jpg'
-import { StaticImageData } from 'next/image'
-
-// Define the event interface
-interface Event {
-  image: StaticImageData
-  title: string
-  date: string
-  time: string
-  status: 'upcoming' | 'live' | 'ended' | 'replay'
-  link: string
-}
-
-const events: Event[] = [
-  {
-    image: afternysc,
-    title: "After NYSC: Building a Career in Digital Marketing",
-    date: "March 15, 2024",
-    time: "2:00 PM WAT",
-    status: "upcoming",
-    link: "#"
-  },
-  {
-    image: maxservice,
-    title: "Maximizing Service-Based Business Growth",
-    date: "March 10, 2024",
-    time: "3:00 PM WAT",
-    status: "replay",
-    link: "#"
-  },
-  {
-    image: dollarmarket,
-    title: "Dollar Marketing: International Business Strategy",
-    date: "March 8, 2024",
-    time: "1:00 PM WAT",
-    status: "ended",
-    link: "#"
-  },
-  {
-    image: cohort1,
-    title: "Marketing Cohort 1.0: Foundation Program",
-    date: "March 12, 2024",
-    time: "4:00 PM WAT",
-    status: "live",
-    link: "#"
-  }
-]
+import { SanityEvent, getEvents, urlForImage } from '@/app/lib/sanity'
 
 const EventsSection = () => {
+  const [events, setEvents] = useState<SanityEvent[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const eventsData = await getEvents()
+        setEvents(eventsData.slice(0, 4))
+      } catch (error) {
+        console.error('Error fetching events:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchEvents()
+  }, [])
+
+  if (loading) {
+    return <div className="container mx-auto px-4 py-20">Loading events...</div>
+  }
+
   return (
     <section className="relative w-full bg-background dark:bg-background py-20">
       {/* Background decorative elements */}
@@ -81,17 +56,38 @@ const EventsSection = () => {
 
         {/* Events Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-          {events.map((event, index) => (
-            <motion.div
-              key={event.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <EventCard {...event} />
-            </motion.div>
-          ))}
+          {events.map((event, index) => {
+            const eventDate = new Date(event.startDateTime)
+            const formattedDate = eventDate.toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric'
+            })
+            const formattedTime = eventDate.toLocaleTimeString('en-US', {
+              hour: 'numeric',
+              minute: '2-digit',
+              hour12: true
+            })
+
+            return (
+              <motion.div
+                key={event._id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <EventCard
+                  image={urlForImage(event.coverImage.asset).url()}
+                  title={event.title}
+                  date={formattedDate}
+                  time={`${formattedTime} ${event.timeZone}`}
+                  status={event.status}
+                  link={event.status === 'replay' ? event.replayUrl! : event.registrationLink}
+                />
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>
