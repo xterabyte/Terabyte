@@ -4,7 +4,7 @@
 import { useEffect, useState } from 'react'
 import EventCard from './EventCard'
 import { motion } from 'framer-motion'
-import { SanityEvent, getEvents, urlForImage } from '@/app/lib/sanity'
+import { SanityEvent, urlForImage } from '@/app/lib/sanity'
 
 const EventsSection = () => {
   const [events, setEvents] = useState<SanityEvent[]>([])
@@ -13,7 +13,11 @@ const EventsSection = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const eventsData = await getEvents()
+        const response = await fetch('/api/events')
+        if (!response.ok) {
+          throw new Error('Failed to fetch events')
+        }
+        const eventsData = await response.json()
         setEvents(eventsData.slice(0, 4))
       } catch (error) {
         console.error('Error fetching events:', error)
@@ -22,7 +26,14 @@ const EventsSection = () => {
       }
     }
 
+    // Initial fetch
     fetchEvents()
+
+    // Set up polling every minute
+    const intervalId = setInterval(fetchEvents, 600000)
+
+    // Cleanup interval on unmount
+    return () => clearInterval(intervalId)
   }, [])
 
   if (loading) {

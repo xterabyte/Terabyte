@@ -39,9 +39,10 @@ export interface SanityEvent {
 }
 
 // Fetch events query
+
 export async function getEvents(): Promise<SanityEvent[]> {
   return await client.fetch(`
-    *[_type == "event"] | order(startDateTime asc) {
+    *[_type == "event"] | order(_createdAt desc)[0...4] {
       _id,
       title,
       slug,
