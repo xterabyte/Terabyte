@@ -30,7 +30,7 @@ const CareerSection = () => {
             <div className="space-y-6 max-w-xl">
               <h2 className="text-4xl lg:text-5xl font-bold text-primary dark:text-white tracking-tight leading-tight">
                 Opportunities for{' '}
-                <span className="block">Career Growth</span>
+                <span className="block">Seeing Career Growth</span>
               </h2>
               <p className="text-lg text-foreground/80 dark:text-secondary leading-relaxed">
                 We not only build talents. We connect talents with roles in the marketing space.
