@@ -152,7 +152,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="flex items-center justify-center mt-20 sm:mt-10 md:justify-start space-x-3 mb-4"
+              className="flex items-center justify-center mt-20 sm:mt-0 md:justify-start space-x-3 mb-4"
             >
               <Rocket className="text-primary" size={useResponsiveSize(24, 32)} />
               <span className="text-xs sm:text-sm font-medium text-muted-foreground">
@@ -172,8 +172,8 @@ const Hero: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex justify-center md:justify-start space-x-4 mt-6 sm:mx-5">
-            <Button asChild size="lg" className="group flex items-center space-x-2">
+          <div className="flex justify-center md:justify-start space-x-2 mt-6 sm:mx-5">
+            <Button asChild size="sm" className="group flex items-center space-x-2">
               <Link href="/about">
                 <span className="text-xs sm:text-sm">Learn More</span>
                 <Zap
@@ -183,7 +183,7 @@ const Hero: React.FC = () => {
               </Link>
             </Button>
 
-            <Button variant="outline" size="lg" className="group flex items-center space-x-2">
+            <Button variant="outline" size="sm" className="group flex items-center space-x-2">
               <Target
                 className="group-hover:rotate-12 transition-transform mr-2"
                 size={useResponsiveSize(16, 20)}
