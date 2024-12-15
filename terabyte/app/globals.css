@@ -7,93 +7,59 @@ body {
 }
 
 @layer base {
-  :root {
-    /* Base colors - clean white background with dark text */
-    --background: 0 0% 100%; /* White */
-    --foreground: 0 0% 0%; /* Pure black for main text */
-    
-    /* Card and surface colors */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
-    
-    /* Primary colors - using the brand blue */
-    --primary: 198 82% 22%; /* #0a4c68 */
-    --primary-foreground: 0 0% 100%;
-    
-    /* Secondary colors - light green tint */
-    --secondary: 140 100% 98%; /* #f6fff9 */
-    --secondary-foreground: 198 82% 22%;
-    
-    /* Muted variants */
-    --muted: 140 33% 95%;
-    --muted-foreground: 198 82% 15%;
-    
-    /* Accent colors - lighter version of primary */
-    --accent: 198 82% 95%;
-    --accent-foreground: 198 82% 22%;
-    
-    /* Destructive/Error colors */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    
-    /* Border and input colors */
-    --border: 198 20% 88%;
-    --input: 198 20% 88%;
-    --ring: 198 82% 22%;
-    
-    /* Chart colors - based on primary palette */
-    --chart-1: 198 82% 22%;
-    --chart-2: 198 82% 35%;
-    --chart-3: 198 70% 45%;
-    --chart-4: 140 100% 98%;
-    --chart-5: 198 82% 60%;
-    
-    --radius: 0.5rem;
+    :root {
+      --background: 199 33% 98%;
+      --foreground: 199 71% 0%;
+      --muted: 169 24% 90%;
+      --muted-foreground: 169 13% 34%;
+      --popover: 199 33% 97%;
+      --popover-foreground: 0 0% 0%;
+      --card: 199 33% 97%;
+      --card-foreground: 0 0% 0%;
+      --border: 199 15% 90%;
+      --input: 199 15% 90%;
+      --primary: 199 84% 49%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 169 84% 49%;
+      --secondary-foreground: 169 84% 9%;
+      --accent: 229 84% 49%;
+      --accent-foreground: 0 0% 100%;
+      --destructive: 7 83% 22%;
+      --destructive-foreground: 7 83% 82%;
+      --ring: 199 84% 49%;
+      --chart-1: 199 84% 49%;
+      --chart-2: 169 84% 49%;
+      --chart-3: 229 84% 49%;
+      --chart-4: 169 84% 52%;
+      --chart-5: 199 87% 49%;
+      --radius: 0.5rem;
+    }
+  
+    .dark {
+      --background: 199 60% 1%;
+      --foreground: 199 31% 99%;
+      --muted: 169 24% 10%;
+      --muted-foreground: 169 13% 66%;
+      --popover: 199 60% 2%;
+      --popover-foreground: 0 0% 100%;
+      --card: 199 60% 2%;
+      --card-foreground: 0 0% 100%;
+      --border: 199 15% 14%;
+      --input: 199 15% 14%;
+      --primary: 199 84% 49%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 169 84% 49%;
+      --secondary-foreground: 169 84% 9%;
+      --accent: 229 84% 49%;
+      --accent-foreground: 0 0% 100%;
+      --destructive: 7 83% 47%;
+      --destructive-foreground: 0 0% 100%;
+      --ring: 199 84% 49%;
+      --chart-1: 199 84% 49%;
+      --chart-2: 169 84% 49%;
+      --chart-3: 229 84% 49%;
+      --chart-4: 169 84% 52%;
+      --chart-5: 199 87% 49%;
+    }
   }
-
-  .dark {
-    /* Dark mode - deep blue-based dark theme complementing light mode */
-    --background: 198 82% 8%; /* Darker version of primary */
-    --foreground: 140 100% 98%; /* Light secondary color */
-    
-    /* Card and surface colors */
-    --card: 198 82% 12%;
-    --card-foreground: 140 100% 98%;
-    --popover: 198 82% 12%;
-    --popover-foreground: 140 100% 98%;
-    
-    /* Primary colors - lighter version of primary */
-    --primary: 198 82% 60%;
-    --primary-foreground: 198 82% 8%;
-    
-    /* Secondary colors */
-    --secondary: 140, 89%, 65%;
-    --secondary-foreground: 140 100% 98%;
-    
-    /* Muted variants */
-    --muted: 198 82% 18%;
-    --muted-foreground: 140 30% 90%;
-    
-    /* Accent colors */
-    --accent: 198 82% 25%;
-    --accent-foreground: 140 100% 98%;
-    
-    /* Destructive/Error colors */
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    
-    /* Border and input colors */
-    --border: 198 82% 20%;
-    --input: 198 82% 20%;
-    --ring: 198 82% 60%;
-    
-    /* Chart colors - adjusted for dark mode */
-    --chart-1: 198 82% 60%;
-    --chart-2: 198 82% 70%;
-    --chart-3: 198 70% 80%;
-    --chart-4: 140 100% 90%;
-    --chart-5: 198 82% 40%;
-  }
-}
+  
