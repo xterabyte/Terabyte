@@ -1,69 +1,92 @@
-'use client'
-
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import HappyPersons from '@/app/assets/group-happy.png'
+import React from 'react';
+import { ArrowRight, BarChart2, Users, Target, TrendingUp } from 'lucide-react';
+import marketing from '@/app/assets/marketing.png';
+import Image from 'next/image';
 
 const MarketingSolutions = () => {
   return (
-    <section className="relative w-full bg-background dark:bg-background">
-      <div className="w-full">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-0 bg-secondary dark:bg-secondary/5 relative overflow-hidden">
-          {/* Content Container - Now on the left */}
-          <div className="lg:w-1/2 space-y-8 px-6 lg:px-12 py-12 lg:py-20">
-            <div className="space-y-6 max-w-xl">
-              <h2 className="text-4xl lg:text-5xl font-bold text-primary dark:text-white tracking-tight leading-tight">
-                Hands-on Marketing{' '}
-                <span className="block">Solutions for Traction</span>
-              </h2>
-              <p className="text-lg text-foreground/80 dark:text-secondary leading-relaxed">
-                Our Sales Accelerator delivers tailored, high-impact
-                marketing strategies to enhance visibility, retention, and
-                revenue. We help startups navigate growth with less
-                guesswork and more results.
-              </p>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="mt-4 text-primary border-teragreen hover:bg-primary hover:text-white 
-                         dark:text-primary dark:border-primary dark:hover:bg-primary dark:hover:text-white 
-                         transition-colors duration-300 font-semibold tracking-wide min-w-[180px]"
-              >
-                LEARN MORE
-              </Button>
-            </div>
+    <section className="w-full py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content Column */}
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold text-primary">
+              Hands-on Marketing Solutions for Traction
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Our Sales Accelerator delivers tailored, high-impact marketing strategies to enhance visibility, retention, and revenue. We help startups navigate growth with less guesswork and more results.
+            </p>
+            <button 
+              className="group flex items-center gap-2 bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-md"
+            >
+              LEARN MORE
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
 
-            {/* Decorative background elements */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute bottom-0 left-1/4 w-[200px] h-[200px] bg-primary/3 dark:bg-primary/5 rounded-full blur-2xl -z-10" />
+            {/* Stats Cards */}
+            <div className="grid grid-cols-2 gap-4 mt-8">
+              {[
+                { icon: BarChart2, label: 'Increased Revenue', value: '150%' },
+                { icon: Users, label: 'Client Retention', value: '95%' },
+                { icon: Target, label: 'Market Reach', value: '200K+' },
+                { icon: TrendingUp, label: 'Growth Rate', value: '3x' }
+              ].map((stat, index) => (
+                <div key={index} className="p-4 border-2 border-muted hover:border-secondary transition-colors rounded-lg bg-card">
+                  <div className="flex flex-col items-center text-center space-y-2">
+                    <stat.icon className="w-8 h-8 text-secondary" />
+                    <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                    <p className="text-sm text-muted-foreground">{stat.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Image Container - Now on the right */}
-          <div className="relative w-full lg:w-1/2 min-h-[500px] lg:min-h-[600px] ">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Image
-                src={HappyPersons}
-                alt="Happy people representing successful marketing solutions"
-                fill
-                className="object-cover object-center dark:opacity-90 transition-opacity duration-300"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
+          {/* Right Animation Column */}
+          <div 
+            className="relative aspect-square"
+          >
+            {/* Decorative Background Elements */}
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-secondary/20 rounded-full blur-3xl" />
+            <div className="absolute inset-0">
+              <svg viewBox="0 0 200 200" className="w-full h-full">
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: 'rgb(var(--secondary))' }} />
+                    <stop offset="100%" style={{ stopColor: 'rgb(var(--accent))' }} />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+                  fill="none"
+                  stroke="url(#gradient)"
+                  strokeWidth="6"
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 100 100"
+                    to="360 100 100"
+                    dur="20s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+              </svg>
+            </div>
+
+            {/* Main Illustration */}
+            <div className="relative w-full h-full flex items-center justify-center">
+            <Image
+                src={marketing}
+                alt="Marketing Solutions Illustration"
+                className="w-4/5 h-4/5 object-contain"
               />
             </div>
-            {/* Image overlay for dark mode */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-secondary/20 dark:to-background/80 pointer-events-none" />
           </div>
         </div>
       </div>
-
-      {/* Border line decor */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent dark:via-primary/10" />
-
-      {/* Additional decorative elements specific to this section */}
-      <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-primary/3 dark:bg-primary/5 rounded-full blur-2xl -z-10" />
-      <div className="absolute bottom-1/4 left-0 w-[150px] h-[150px] bg-primary/4 dark:bg-primary/6 rounded-full blur-xl -z-10" />
     </section>
-  )
-}
+  );
+};
 
-export default MarketingSolutions
+export default MarketingSolutions;
