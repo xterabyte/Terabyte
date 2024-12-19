@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full overflow-hidden pt-24 px-10 flex items-center justify-center"
+      className="relative w-full overflow-hidden pt-24 pb-10  px-10 flex items-center justify-center"
     >
       {/* Layered Background with Movement */}
       <motion.div
