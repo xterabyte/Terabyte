@@ -107,9 +107,8 @@ const CareerSection = () => {
               <Image
                 src={SmilingWoman}
                 alt="Career Growth"
+                fill
                 className="w-full h-full object-cover"
-                layout="fill"
-                objectFit="cover"
               />
             </div>
 
