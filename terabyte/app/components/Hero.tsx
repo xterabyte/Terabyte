@@ -18,11 +18,15 @@ const useResponsiveSize = (mobileSize: number, desktopSize: number) => {
 
   useEffect(() => {
     const checkSize = () => {
-      setSize(typeof window !== 'undefined' && window.innerWidth >= 640 ? desktopSize : mobileSize);
+      if (typeof window !== 'undefined') {
+        setSize(window.innerWidth >= 640 ? desktopSize : mobileSize);
+      }
     };
     checkSize();
-    window.addEventListener('resize', checkSize);
-    return () => window.removeEventListener('resize', checkSize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', checkSize);
+      return () => window.removeEventListener('resize', checkSize);
+    }
   }, [mobileSize, desktopSize]);
 
   return size;
@@ -76,8 +80,8 @@ const Hero: React.FC = () => {
           <motion.div
             key={i}
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
               scale: Math.random() * 0.5 + 0.5,
               opacity: 0.2,
             }}
