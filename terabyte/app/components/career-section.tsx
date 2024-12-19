@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import SmilingWoman from '@/app/assets/SmilingWoman.png'
+import SmilingWoman from '@/app/assets/happy-model.png'
 
 const CareerSection = () => {
   return (

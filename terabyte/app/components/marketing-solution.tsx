@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import HappyPersons from '@/app/assets/Happypersons.png'
+import HappyPersons from '@/app/assets/group-happy.png'
 
 const MarketingSolutions = () => {
   return (
